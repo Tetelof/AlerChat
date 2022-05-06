@@ -17,21 +17,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getData(){
-        val retofitClient = NetworkUtils
-            .getRetrofitInstance("https://jsonplaceholder.typicode.com")
+        val retrofit = Retrofit.getRetrofit("http://alertrack.com.br")
 
-        val endpoint = retofitClient.create(Endpoint::class.java)
-        val callback = endpoint.getPosts()
+        val ApiInterface = retrofit.create(ApiInterface::class.java)
+        val login = Login(login = "meulogin", senha = "123" )
+        val callback = ApiInterface.createPost(login)
 
-        callback.enqueue(object: Callback<List<Posts>>{
-            override fun onFailure(call: Call<List<Posts>>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
+        callback.enqueue(object: Callback<Auth> {
+            override fun onResponse(call: Call<Auth>, response: Response<Auth>) {
+                var authResponse = response.body()
+                txt_texto.text = authResponse.toString()
             }
 
-            override fun onResponse(call: Call<List<Posts>>, response: Response<List<Posts>>) {
-                response.body()?.forEach{
-                    textView.text = textView.text.toString().plus(it.body)
-                }
+            override fun onFailure(call: Call<Auth>, t: Throwable) {
+                Toast.makeText(applicationContext,"onFailure called: "+t.message,Toast.LENGTH_SHORT).show()
+                callback.cancel()
             }
         })
     }

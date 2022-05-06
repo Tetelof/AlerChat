@@ -4,9 +4,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class NetworkUtils {
+class Retrofit {
     companion object{
-        fun getRetrofitInstance(path: String): Retrofit {
+        fun getRetrofit(path: String): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(path)
                 .addConverterFactory(GsonConverterFactory.create())
