@@ -17,21 +17,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getData(){
-        val retrofit = Retrofit.getRetrofit("http://alertrack.com.br")
+        val retrofit = RetrofitService.getRetrofitInstance()
 
-        val ApiInterface = retrofit.create(ApiInterface::class.java)
         val login = Login(login = "meulogin", senha = "123" )
-        val callback = ApiInterface.createPost(login)
+        
+        val post = retrofit.createPost(login)
 
-        callback.enqueue(object: Callback<Auth> {
-            override fun onResponse(call: Call<Auth>, response: Response<Auth>) {
-                var authResponse = response.body()
-                txt_texto.text = authResponse.toString()
+        post.enqueue(object: Callback<Autenticacao> {
+            override fun onResponse(call: Call<Autenticacao>, response: Response<Autenticacao>) {
+                if(response.isSuccessfuk){
+                    Log.d("TAG", "onResponse: " + response..body()?.status.toString())
+                }else{
+                    Log.d("TAG", "onResponse: " + response.message())
             }
 
             override fun onFailure(call: Call<Auth>, t: Throwable) {
-                Toast.makeText(applicationContext,"onFailure called: "+t.message,Toast.LENGTH_SHORT).show()
-                callback.cancel()
+                Log.d("TAG", "onResponse: " + t.message())
             }
         })
     }
