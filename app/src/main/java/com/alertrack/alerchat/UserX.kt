@@ -2,11 +2,8 @@ package com.alertrack.alerchat
 
 import com.google.gson.annotations.SerializedName
 
-data class User (
-    @SerializedName("avatar")
+data class UserX (
     val avatar : String,
-    @SerializedName("name")
-    val name : String,
-    @SerializedName("email")
     val email : String
+    val name : String,
 )
