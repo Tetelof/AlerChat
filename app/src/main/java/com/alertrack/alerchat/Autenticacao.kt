@@ -2,13 +2,9 @@ package com.alertrack.alerchat
 
 import com.google.gson.annotations.SerializedName
 
-data class Auth {
-
-    val status: Boolean
-
-    val message: String
-
-    val token: String
-
+data class Autenticacao (
+    val message: String,
+    val status: Boolean,
+    val token: String,
     val user: UserX
-}
+)

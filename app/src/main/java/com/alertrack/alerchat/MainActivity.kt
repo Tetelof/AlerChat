@@ -1,6 +1,7 @@
 package com.alertrack.alerchat
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,14 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         post.enqueue(object: Callback<Autenticacao> {
             override fun onResponse(call: Call<Autenticacao>, response: Response<Autenticacao>) {
-                if(response.isSuccessfuk){
-                    Log.d("TAG", "onResponse: " + response..body()?.status.toString())
-                }else{
+                if(response.isSuccessful){
+                    Log.d("TAG", "onResponse: " + response.body()?.status.toString())
+                }else {
                     Log.d("TAG", "onResponse: " + response.message())
+                }
             }
 
-            override fun onFailure(call: Call<Auth>, t: Throwable) {
-                Log.d("TAG", "onResponse: " + t.message())
+            override fun onFailure(call: Call<Autenticacao>, t: Throwable) {
+                Log.d("TAG", "onResponse: " + t.message)
             }
         })
     }
