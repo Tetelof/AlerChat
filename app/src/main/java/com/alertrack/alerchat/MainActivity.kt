@@ -13,14 +13,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        getData()
+        if (button_login.isPressed) {
+            getData(txt_usuario.text.toString(),txt_senha.toString())
+        }
     }
 
-    fun getData(){
+    fun getData(usuario: String, senha: String) : Login{
         val retrofit = RetrofitService.getRetrofitInstance()
 
-        val login = Login(login = "meulogin", senha = "123" )
+        val login = Login(login = usuario, senha = senha )
         
         val post = retrofit.createPost(login)
 
@@ -34,8 +35,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<Autenticacao>, t: Throwable) {
-                Log.d("TAG", "onResponse: " + t.message)
+                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
         })
+        return login
     }
 }
