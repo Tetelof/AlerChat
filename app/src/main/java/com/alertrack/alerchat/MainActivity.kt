@@ -1,5 +1,6 @@
 package com.alertrack.alerchat
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -13,22 +14,22 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (button_login.isPressed) {
-            getData(txt_usuario.text.toString(),txt_senha.toString())
-        }
+
+        getData()
     }
 
-    fun getData(usuario: String, senha: String) : Login{
+    fun getData(){
         val retrofit = RetrofitService.getRetrofitInstance()
 
-        val login = Login(login = usuario, senha = senha )
+        val login = Login(login = txt_usuario.text.toString(), senha = txt_senha.toString() )
         
         val post = retrofit.createPost(login)
 
         post.enqueue(object: Callback<Autenticacao> {
             override fun onResponse(call: Call<Autenticacao>, response: Response<Autenticacao>) {
                 if(response.isSuccessful){
-                    Log.d("TAG", "onResponse: " + response.body()?.status.toString())
+                    val intent = Intent(this@MainActivity, Mensagens::class.java)
+                    startActivity(intent)
                 }else {
                     Log.d("TAG", "onResponse: " + response.message())
                 }
@@ -38,6 +39,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
         })
-        return login
     }
 }
