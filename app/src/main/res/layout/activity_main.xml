@@ -24,6 +24,7 @@
         android:paddingLeft="40dp"
         android:textColor="@color/Login_buble"/>
 
+    <!-- bug, posso criar nova linha dentro do box de texto-->
     <EditText
         android:id="@+id/txt_login"
         android:layout_width="match_parent"
@@ -46,6 +47,7 @@
         android:paddingLeft="40dp"
         android:textColor="@color/Login_buble"/>
 
+    <!-- bug, posso criar nova linha dentro do box de texto-->
     <EditText
         android:id="@+id/txt_senha"
         android:layout_width="match_parent"
@@ -62,7 +64,7 @@
     <Button
         android:id="@+id/button_login"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/txt_senha"
         android:text="Fazer login"
         android:background="@drawable/button_background"
