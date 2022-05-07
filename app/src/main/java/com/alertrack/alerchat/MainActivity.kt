@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     fun getData(){
         val retrofit = RetrofitService.getRetrofitInstance()
 
-        val login = Login(login = txt_usuario.text.toString(), senha = txt_senha.toString() )
+        val login = Login(login = txt_login.text.toString(), senha = txt_senha.toString() )
         
         val post = retrofit.createPost(login)
 
