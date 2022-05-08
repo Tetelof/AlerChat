@@ -1,6 +1,4 @@
-package com.alertrack.alerchat
-
-import com.google.gson.annotations.SerializedName
+package com.alertrack.alerchat.retrofit
 
 data class Autenticacao (
     val message: String,

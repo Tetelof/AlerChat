@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.Message
 import android.widget.Button
 import android.widget.EditText
+import com.alertrack.alerchat.retrofit.Login
+import com.alertrack.alerchat.retrofit.UserX
 
 class LoginPage : AppCompatActivity() {
 
@@ -17,22 +19,26 @@ class LoginPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_page)
 
+        supportActionBar?.hide()
+
         txtLogin = findViewById(R.id.txt_login)
         txtSenha = findViewById(R.id.txt_senha)
         buttonLogin = findViewById(R.id.button_login)
 
         buttonLogin.setOnClickListener{
-            getData()
+            val login = txtLogin.text.toString()
+            val senha = txtSenha.text.toString()
+            fazerLogin(login, senha)
         }
 
     }
-    fun getData(){
+    fun fazerLogin(login : String, senha : String){
         val retrofit = RetrofitService.getRetrofitInstance()
 
-        val login = Login(login = txtLogin.text.toString(), senha = txtSenha.text.toString() )
+        val login = Login(login = login, senha = senha)
 
-        val post = retrofit.createPost(login)
-
+//        val post = retrofit.createPost(login)
+//
 //        post.enqueue(object: Callback<Autenticacao> {
 //            override fun onResponse(call: Call<Autenticacao>, response: Response<Autenticacao>) {
 //                if(response.isSuccessful){

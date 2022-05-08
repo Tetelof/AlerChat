@@ -1,4 +1,4 @@
-package com.alertrack.alerchat
+package com.alertrack.alerchat.retrofit
 
 import com.google.gson.annotations.SerializedName
 

@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         val intent = Intent(this, LoginPage::class.java)
         startActivity(intent)
     }
