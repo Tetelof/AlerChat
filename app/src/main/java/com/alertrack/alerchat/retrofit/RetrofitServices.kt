@@ -1,13 +1,11 @@
 package com.alertrack.alerchat
 
-import com.alertrack.alerchat.retrofit.Autenticacao
-import com.alertrack.alerchat.retrofit.Conversas
-import com.alertrack.alerchat.retrofit.Login
-import com.alertrack.alerchat.retrofit.Token
+import com.alertrack.alerchat.retrofit.*
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface RetrofitService {
@@ -15,7 +13,10 @@ interface RetrofitService {
     fun createPost(@Body login: Login) : Call<Autenticacao>
 
     @POST("api/teste_mobile/chats.php")
-    fun createPost(@Body token: Token) : Call<Conversas>
+    fun createPost(@Body token: Token) : Call<ChatResposta>
+
+    @GET("api/teste_mobile/msgs.php?contact_id=1")
+    fun getMensagens() : Call<MsgResposta>
     
     companion object{
         private val retrofitService : RetrofitService by lazy {

@@ -30,12 +30,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/txtview_usuario"
-        android:layout_marginTop="5dp"
-        android:hint="Digite aqui seu usuário"
-        android:paddingLeft="20dp"
-        android:background="@drawable/txt_background"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/txt_background"
+        android:hint="Digite aqui seu usuário"
+        android:paddingLeft="20dp" />
 
     <TextView
         android:id="@+id/txtview_senha"

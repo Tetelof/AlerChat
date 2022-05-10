@@ -10,4 +10,5 @@
     <color name="Alertrack_blue">#4C6DB3</color>
     <color name="message_bubble">#E4E5EA</color>
     <color name="Login_buble">#FFFFFF</color>
+    <color name="Messagebox">#BABAB9</color>
 </resources>
