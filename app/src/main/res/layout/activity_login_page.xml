@@ -22,7 +22,7 @@
         android:layout_marginTop="50dp"
         android:text="Usuário:"
         android:paddingLeft="40dp"
-        android:textColor="@color/Login_buble"/>
+        android:textColor="@color/Login_bubble"/>
 
     <!-- bug, posso criar nova linha dentro do box de texto-->
     <EditText
@@ -45,7 +45,7 @@
         android:layout_marginTop="10dp"
         android:text="Senha:"
         android:paddingLeft="40dp"
-        android:textColor="@color/Login_buble"/>
+        android:textColor="@color/Login_bubble"/>
 
     <!-- bug, posso criar nova linha dentro do box de texto-->
     <EditText
@@ -68,7 +68,7 @@
         android:layout_below="@+id/txt_senha"
         android:text="Fazer login"
         android:background="@drawable/button_background"
-        android:textColor="@color/Login_buble"
+        android:textColor="@color/Login_bubble"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:layout_marginRight="40dp"/>

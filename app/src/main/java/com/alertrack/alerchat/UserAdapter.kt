@@ -1,6 +1,7 @@
 package com.alertrack.alerchat
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,10 +24,20 @@ class UserAdapter(val context: Context, val userList: ArrayList<Chat>) :
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentChat = userList[position]
+        val name = currentChat.contact.name
+        val avatar = currentChat.contact.avatar
 
-        holder.txtName.text = currentChat.contact.name
+        holder.txtName.text = name
         holder.txtLastMessage.text = currentChat.last_msg
-        holder.avatar.text = currentChat.contact.avatar
+        holder.avatar.text = avatar
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, Conversa::class.java)
+            intent.putExtra("name", name)
+            intent.putExtra("avatar", avatar)
+
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

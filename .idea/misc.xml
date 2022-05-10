@@ -4,13 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Danniel/AndroidStudioProjects/AlerChat/app/src/main/res/layout/activity_main.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.333" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/button_background.xml" value="0.333" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/ic_launcher_background.xml" value="0.333" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/message_box_background.xml" value="0.333" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/msg_buble_recieved.xml" value="0.333" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/sent_bubble_message.xml" value="0.333" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/drawable/txt_background.xml" value="0.333" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/activity_conversa.xml" value="0.33" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/activity_login_page.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/activity_mensagens.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/recieve.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/sent.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/layout/userx_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Danniel/Documents/Projetos e programas/Android/AlerChat/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
       </map>
