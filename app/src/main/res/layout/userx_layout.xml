@@ -2,20 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <TextView
+    <ImageView
         android:id="@+id/avatar"
+        android:layout_marginLeft="10dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="avatar"/>
+        android:layout_centerVertical="true"
+        android:src="@drawable/avatar"/>
     <TextView
         android:layout_marginTop="10dp"
         android:id="@+id/txt_Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/avatar"
-        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/avatar"
         android:text="Hello World!"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         android:paddingLeft="10dp"/>
@@ -24,18 +26,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_Nome"
+        android:layout_toRightOf="@id/avatar"
         android:text="My name is Danniel!"
-        android:layout_marginLeft="50dp"
-        android:layout_alignLeft="@+id/avatar"
         android:paddingLeft="10dp"/>
 
     <View
         android:layout_below="@+id/txt_lastMessage"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="60dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/message_bubble"/>
+        android:background="@color/message_bubble"
+        android:layout_toRightOf="@id/avatar"/>
 
 </RelativeLayout>

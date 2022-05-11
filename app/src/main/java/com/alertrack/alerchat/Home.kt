@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ import com.alertrack.alerchat.retrofit.Chat
 import com.alertrack.alerchat.retrofit.Contato
 import com.alertrack.alerchat.retrofit.ChatResposta
 import com.alertrack.alerchat.retrofit.Token
+import kotlinx.android.synthetic.main.activity_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,10 +25,13 @@ class Home : AppCompatActivity() {
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userList: ArrayList<Chat>
     private lateinit var adapter: UserAdapter
+    private lateinit var logout: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mensagens)
+        setContentView(R.layout.activity_home)
+
+        supportActionBar?.hide()
 
 
         val token = Token(token=intent.getStringExtra("token").toString())
@@ -42,15 +47,8 @@ class Home : AppCompatActivity() {
             userList.add(chat)
         }
 
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.logout){
+        logout = findViewById<ImageView>(R.id.logout_button)
+        logout.setOnClickListener{
             val intent = Intent(this@Home, MainActivity::class.java)
 
             val sharedPrefs = getSharedPreferences("LoggedIn", Context.MODE_PRIVATE)
@@ -64,9 +62,7 @@ class Home : AppCompatActivity() {
 
             finish()
             startActivity(intent)
-            return true
         }
-        return true
     }
 
     fun getChats(token: Token) : List<Chat>{

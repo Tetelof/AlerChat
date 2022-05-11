@@ -5,13 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Conversa">
+    <RelativeLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/Alertrack_blue">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/backButton"
+            android:src="@drawable/avatar"/>
+
+        <TextView
+            android:id="@+id/contactUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Danniel Tetelof"
+            android:paddingLeft="20sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@color/Alertrack_blue"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/back_button"/>
+
+
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/linearLayout"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@id/header_title"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"

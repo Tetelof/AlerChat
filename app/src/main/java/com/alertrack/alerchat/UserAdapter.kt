@@ -9,8 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alertrack.alerchat.retrofit.Chat
-import com.alertrack.alerchat.retrofit.Contato
-import kotlinx.android.synthetic.main.userx_layout.view.*
 
 class UserAdapter(val context: Context, val userList: ArrayList<Chat>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -25,16 +23,15 @@ class UserAdapter(val context: Context, val userList: ArrayList<Chat>) :
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val currentChat = userList[position]
         val name = currentChat.contact.name
-        val avatar = currentChat.contact.avatar
+
+
 
         holder.txtName.text = name
         holder.txtLastMessage.text = currentChat.last_msg
-        holder.avatar.text = avatar
 
         holder.itemView.setOnClickListener{
             val intent = Intent(context, Conversa::class.java)
             intent.putExtra("name", name)
-            intent.putExtra("avatar", avatar)
 
             context.startActivity(intent)
         }
@@ -47,6 +44,6 @@ class UserAdapter(val context: Context, val userList: ArrayList<Chat>) :
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val txtName = itemView.findViewById<TextView>(R.id.txt_Nome)
         val txtLastMessage = itemView.findViewById<TextView>(R.id.txt_lastMessage)
-        val avatar = itemView.findViewById<TextView>(R.id.avatar)
+        val avatar = itemView.findViewById<ImageView>(R.id.avatar)
     }
 }

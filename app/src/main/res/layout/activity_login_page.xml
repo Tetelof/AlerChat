@@ -50,6 +50,7 @@
     <!-- bug, posso criar nova linha dentro do box de texto-->
     <EditText
         android:id="@+id/txt_senha"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/txtview_senha"
